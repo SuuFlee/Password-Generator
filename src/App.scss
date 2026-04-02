@@ -1,0 +1,46 @@
+
+.widget{
+  width: 350px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  gap: 10px;
+
+  .text-name{
+  color: rgba(108, 106, 121);
+  font-weight: 600;
+  font-size:14px;
+  margin: 5px;
+  }
+
+  .first, .second{
+    background-color: rgba(36, 35, 43);
+    gap: 10px;
+  }
+  .second{
+      width: 330px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+
+}
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+.button{
+  height: 40px;
+  width: 90%;
+  background-color: rgb(164, 255, 164);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

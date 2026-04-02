@@ -1,0 +1,36 @@
+
+.conteiner{
+    background-color: rgb(22, 22, 22);
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.strenghtInput{
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    height: 40px;
+    padding: 0 18px;
+}
+
+.forFlex{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: 0 15px;
+}
+.off{
+    height: 16px;
+    width: 5px;
+    border: 1px solid white; 
+}
+
+.on{
+    height: 16px;
+    width: 5px;
+    border: 1px solid rgb(124, 255, 124);
+    background-color: rgb(124, 255, 124);  
+}

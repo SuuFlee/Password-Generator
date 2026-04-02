@@ -1,0 +1,23 @@
+.text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 20px;
+    .firestText{
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        color:rgb(255, 255, 255);
+        letter-spacing: 1px;
+    }
+    .secondText{
+        color: rgb(124, 252, 124);
+        font-size: 22px;
+    }
+}
+.range{
+    width: 88%;
+    margin: 0 20px;
+    accent-color: white;
+}
+
