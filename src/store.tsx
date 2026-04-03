@@ -15,16 +15,16 @@ type Store = {
   isUpper: boolean, 
   isLower: boolean,
 
-
   randIndex: number,
   randLetter: string,
-
 
   pass: [],
   resultMass: string,
   result: string,
 
   temporary: (string | number)[],
+
+  indicatorTrue: boolean[],
 
 
   bars: {
@@ -67,14 +67,14 @@ export const useStore = create<Store>()((set, get) => ({
 
   all123: [],
   temporary: [],
-
-
+  indicatorTrue: [],
 
   len: 0,
   isNum: false, 
   isSumb: false,
   isUpper: false, 
   isLower: false,
+
 
   randIndex: 0,
   randLetter: "",
@@ -105,8 +105,9 @@ export const useStore = create<Store>()((set, get) => ({
     let isUpper = get().isUpper;
     let isLower = get().isLower;
     let bars = get().bars
+    let indicatorTrue = get().indicatorTrue;
     let indicator = [isNum, isSumb, isUpper, isLower];
-    let indicatorTrue = indicator.filter(e => e === true)
+    indicatorTrue = indicator.filter(e => e === true)
 
     {bars.map(e => {
       if(e.number <= indicatorTrue.length){
@@ -116,10 +117,9 @@ export const useStore = create<Store>()((set, get) => ({
         e.led = "off"
       }
     })}
-    set(()=> ({bars}))
-    },
+    set(()=> ({bars, indicatorTrue: indicatorTrue}))},
 
-  setLen: (e) => set(() => ({ len: e })),
+  setLen: (e) => set(() => ({ len: e})),
 
 
     funtPassword: () => {
@@ -137,6 +137,7 @@ export const useStore = create<Store>()((set, get) => ({
       const len = get().len;
       let resultMass = get().result;
       let result = get().result;
+      let indicatorTrue = get().indicatorTrue;
       
       all123 = [
         {name: isNum, value: numberList},
@@ -154,8 +155,11 @@ export const useStore = create<Store>()((set, get) => ({
         result+=resultMass[Math.floor(Math.random()*resultMass.length )]              
       }
 
+      indicatorTrue.length == 0 ? result = "Choose something" : result
+
       set(()=>({result: result,}))
     },
+
     funcClear: () => {
       let result = get().result
       let temporary = get().temporary
